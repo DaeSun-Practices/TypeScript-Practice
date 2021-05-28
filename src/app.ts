@@ -12,27 +12,38 @@ let gender:boolean = true;
 let subject:string = "TypeScript";
 let courseCompleted:boolean = true;
 
-let student1:Student = {
-    'studentID':2018320161,
-    'studentName':"SongDaeSun",
-    'gender':true,
-    'age':22,
-    'subject':"Computer",
-    'courseCompleted':true
+
+enum SubjectEnum{
+    Computer,
+    Physics,
+    Chemistry,
+    Biology,
+    Linguistics,
+    Sociology,
+    Philosophy,
+    Economics
 }
 
 // interface는 대문자로 시작하자.
 interface Student {
     studentID:number;
-    studentName:string;
+    studentName: 'Kim' | 'Lee' | 'Song', //리터럴 타입
     age?:number; //?가 붙으면 있어도 되고 없어도 상관 없어지는 선택적 property가 된다.
     gender:boolean;
-    subject:string;
+    subject:SubjectEnum;  //Enum
     courseCompleted:boolean;
 
     readonly addComment?: (comment: string) => string;
 }
 
+let student1:Student = {
+    'studentID':2018320161,
+    'studentName': "Kim", //리터럴 타입으로 변환
+    'gender':true,
+    'age':22,
+    'subject':SubjectEnum.Computer,
+    'courseCompleted':true
+}
                                            
 function getStudentDetails(studentID: number)
 //return 되는 값의 type을 더욱 명확히 개시
@@ -50,9 +61,9 @@ function getStudentDetails(studentID: number)
 {
     return {
         'studentID':studentID,
-        'studentName':studentName,
+        'studentName':'Song',
         'gender':gender,
-        'subject':subject,
+        'subject':SubjectEnum.Computer,
         'courseCompleted':courseCompleted
     };
 }

@@ -8,20 +8,31 @@ var age = 21;
 var gender = true;
 var subject = "TypeScript";
 var courseCompleted = true;
+var SubjectEnum;
+(function (SubjectEnum) {
+    SubjectEnum[SubjectEnum["Computer"] = 0] = "Computer";
+    SubjectEnum[SubjectEnum["Physics"] = 1] = "Physics";
+    SubjectEnum[SubjectEnum["Chemistry"] = 2] = "Chemistry";
+    SubjectEnum[SubjectEnum["Biology"] = 3] = "Biology";
+    SubjectEnum[SubjectEnum["Linguistics"] = 4] = "Linguistics";
+    SubjectEnum[SubjectEnum["Sociology"] = 5] = "Sociology";
+    SubjectEnum[SubjectEnum["Philosophy"] = 6] = "Philosophy";
+    SubjectEnum[SubjectEnum["Economics"] = 7] = "Economics";
+})(SubjectEnum || (SubjectEnum = {}));
 var student1 = {
     'studentID': 2018320161,
-    'studentName': "SongDaeSun",
+    'studentName': "Kim",
     'gender': true,
     'age': 22,
-    'subject': "Computer",
+    'subject': SubjectEnum.Computer,
     'courseCompleted': true
 };
 function getStudentDetails(studentID) {
     return {
         'studentID': studentID,
-        'studentName': studentName,
+        'studentName': 'Song',
         'gender': gender,
-        'subject': subject,
+        'subject': SubjectEnum.Computer,
         'courseCompleted': courseCompleted
     };
 }
