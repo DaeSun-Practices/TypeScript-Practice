@@ -8,13 +8,23 @@ var age = 21;
 var gender = true;
 var subject = "TypeScript";
 var courseCompleted = true;
+var student1 = {
+    'studentID': 2018320161,
+    'studentName': "SongDaeSun",
+    'gender': true,
+    'age': 22,
+    'subject': "Computer",
+    'courseCompleted': true
+};
 function getStudentDetails(studentID) {
     return {
         'studentID': studentID,
         'studentName': studentName,
-        'age': age,
         'gender': gender,
         'subject': subject,
         'courseCompleted': courseCompleted
     };
 }
+function saveStudentDetails(student) {
+}
+saveStudentDetails(student1);
