@@ -15,3 +15,19 @@ var sendGreeting2 = function (message, userName, familyName) {
     console.log(message + ", " + userName + ", " + familyName);
 };
 sendGreeting2("Hello");
+var Employee = /** @class */ (function () {
+    function Employee() {
+        var _this = this;
+        this.fullName = 'SongDaeSun';
+        this.age = 22;
+        this.jobTitle = 'Engineer';
+        this.houlyRate = 300;
+        this.workingHoursPerWeek = 80;
+        this.printEmployeeDetails = function () {
+            console.log(_this.fullName + "\uC758 \uC9C1\uC5C5\uC740 " + _this.jobTitle + "\uC785\uB2C8\uB2E4.");
+        };
+    }
+    return Employee;
+}());
+var employee1 = new Employee();
+employee1.printEmployeeDetails();

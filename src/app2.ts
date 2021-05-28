@@ -22,3 +22,20 @@ const sendGreeting2 = (message : string, userName?: string, familyName = "There"
 }
 
 sendGreeting2("Hello")
+
+
+
+class Employee{
+    fullName: string = 'SongDaeSun';
+    age: number = 22;
+    jobTitle: string = 'Engineer';
+    houlyRate: number = 300;
+    workingHoursPerWeek: number = 80;
+    
+    printEmployeeDetails = () : void =>{
+        console.log(`${this.fullName}의 직업은 ${this.jobTitle}입니다.`)
+    }
+}
+
+let employee1 = new Employee();
+employee1.printEmployeeDetails();
