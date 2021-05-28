@@ -26,16 +26,39 @@ sendGreeting2("Hello")
 
 
 class Employee{
-    fullName: string = 'SongDaeSun';
-    age: number = 22;
-    jobTitle: string = 'Engineer';
-    houlyRate: number = 300;
-    workingHoursPerWeek: number = 80;
+    private _fullName: string; //private로 설정함 -> 변경, 읽기도 안됨
+    age: number;
+    jobTitle: string;
+    hourlyRate: number;
+    workingHoursPerWeek: number;
+
+    //constructor에 역시 parameter를 제공할수도 있다.
+    constructor(){
+        this._fullName = "SongDaeSun"
+        this.age = 22
+        this.jobTitle = "Engineer"
+        this.hourlyRate = 300
+        this.workingHoursPerWeek = 80
+    }
+
+    //getter
+    get fullName () {
+        return this._fullName;
+    }
+
+    //setter
+    set fullName (value: string) {
+        this._fullName = value;
+    }
     
     printEmployeeDetails = () : void =>{
-        console.log(`${this.fullName}의 직업은 ${this.jobTitle}입니다.`)
+        console.log(`${this._fullName}의 직업은 ${this.jobTitle}입니다.`)
     }
 }
 
 let employee1 = new Employee();
 employee1.printEmployeeDetails();
+
+console.log(employee1.fullName);
+employee1.fullName = "KimDaeSun";
+console.log(employee1.fullName);
